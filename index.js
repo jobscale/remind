@@ -1,3 +1,4 @@
+const dayjs = require('dayjs');
 const { logger } = require('@jobscale/logger');
 const { app: remind } = require('./app');
 const { list } = require('./app/list');
@@ -44,7 +45,6 @@ class App {
     const rows = rowsList.flat();
     if (!rows.length) return;
     const opts = {};
-    // eslint-disable-next-line no-restricted-syntax
     for (const row of rows) {
       if (!opts.first) opts.first = true;
       else await wait(10000);
@@ -54,7 +54,19 @@ class App {
 
   async start() {
     const rows = remind.filter(list);
-    return this.execute(rows);
+    await this.execute(rows);
+    if (Math.floor((dayjs().unix() / 60) % 3)) return;
+    const renders = [
+      'https://jsx.jp',
+      'https://wetty.jsx.jp/wetty',
+      'https://sshwifty.jsx.jp',
+      'https://wiki.jsx.jp/doku.php',
+      'https://zipcode.jsx.jp',
+    ];
+    await Promise.all(renders.map(
+      url => fetch(url).then(res => logger.info({ status: res.status, url }))
+      .catch(e => logger.error({ message: e.message, url })),
+    ));
   }
 }
 

@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@jobscale/logger": "^0.3.0",
+    "@jobscale/logger": "^0.4.0",
     "dayjs": "^1.11.10"
   },
   "devDependencies": {
