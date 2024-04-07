@@ -63,6 +63,7 @@ class App {
       'https://wiki.jsx.jp/doku.php',
       'https://zipcode.jsx.jp',
       'https://todo.jsx.jp',
+      'https://mqtt.jsx.jp',
     ];
     await Promise.all(renders.map(
       url => fetch(url).then(res => logger.info({ status: res.status, url }))
