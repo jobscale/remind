@@ -64,7 +64,7 @@ class App {
       // 'https://zipcode.jsx.jp',
       // 'https://todo.jsx.jp',
       // 'https://mqtt.jsx.jp',
-      'https://lo-stack.jsx.jp.',
+      'https://lo-stack.jsx.jp',
     ];
     await Promise.all(renders.map(
       url => fetch(url).then(res => logger.info({ status: res.status, url }))
