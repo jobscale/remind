@@ -58,13 +58,12 @@ class App {
     if (Math.floor((dayjs().unix() / 60) % 3)) return;
     const renders = [
       'https://jsx.jp',
-      // 'https://wetty.jsx.jp/wetty',
-      // 'https://sshwifty.jsx.jp',
-      // 'https://wiki.jsx.jp/doku.php',
-      // 'https://zipcode.jsx.jp',
-      // 'https://todo.jsx.jp',
-      // 'https://mqtt.jsx.jp',
-      'https://lo-stack.jsx.jp',
+      'https://wetty.jsx.jp/wetty',
+      'https://sshwifty.jsx.jp',
+      'https://wiki.jsx.jp/doku.php',
+      'https://zipcode.jsx.jp',
+      'https://todo.jsx.jp',
+      'https://mqtt.jsx.jp',
     ];
     await Promise.all(renders.map(
       url => fetch(url).then(res => logger.info({ status: res.status, url }))
