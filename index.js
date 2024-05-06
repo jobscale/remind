@@ -58,7 +58,7 @@ class App {
     if (Math.floor((dayjs().unix() / 60) % 3)) return;
     const renders = [
       'https://jsx.jp',
-      'https://wetty.jsx.jp/wetty',
+      // 'https://wetty.jsx.jp/wetty',
       'https://sshwifty.jsx.jp',
       'https://wiki.jsx.jp/doku.php',
       'https://zipcode.jsx.jp',
