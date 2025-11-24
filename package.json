@@ -7,6 +7,7 @@
     "news"
   ],
   "author": "jobscale <jobscale@users.noreply.github.com>",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node .",
@@ -15,13 +16,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@jobscale/logger": "^0.4.0",
-    "dayjs": "^1.11.10"
+    "@jobscale/logger": "^0.10.1",
+    "dayjs": "^1.11.19"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^27.9.0"
+    "eslint": "^9.39.1",
+    "eslint-plugin-jest": "^29.2.1"
   }
 }
