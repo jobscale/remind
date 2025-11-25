@@ -1,8 +1,8 @@
-const dayjs = require('dayjs');
+import dayjs from 'dayjs';
 
 const isNow = ts => ts > dayjs().subtract(30, 'second') && ts <= dayjs().add(30, 'second');
 
-class App {
+export class Remind {
   filter(list) {
     return list.filter(item => isNow(dayjs(item.schedule)))
     .map(item => {
@@ -12,7 +12,5 @@ class App {
   }
 }
 
-module.exports = {
-  App,
-  app: new App(),
-};
+export const remind = new Remind();
+export default { Remind, remind };

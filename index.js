@@ -1,9 +1,7 @@
-const dayjs = require('dayjs');
-const { logger } = require('@jobscale/logger');
-const { app: remind } = require('./app');
-const { list } = require('./app/list');
-
-const wait = ms => new Promise(resolve => { setTimeout(resolve, ms); });
+import dayjs from 'dayjs';
+import { logger } from '@jobscale/logger';
+import { remind } from './app/index.js';
+import { list } from './app/list.js';
 
 class App {
   postSlack(body) {
@@ -47,7 +45,7 @@ class App {
     const opts = {};
     for (const row of rows) {
       if (!opts.first) opts.first = true;
-      else await wait(10000);
+      else await new Promise(resolve => { setTimeout(resolve, 10000); });
       await this.post(row);
     }
   }
@@ -58,7 +56,6 @@ class App {
     if (Math.floor((dayjs().unix() / 60) % 3)) return;
     const renders = [
       'https://jsx.jp',
-      // 'https://wetty.jsx.jp/wetty',
       'https://sshwifty.jsx.jp',
       'https://wiki.jsx.jp/doku.php',
       'https://zipcode.jsx.jp',
