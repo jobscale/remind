@@ -53,7 +53,7 @@ class App {
   async start() {
     const rows = remind.filter(list);
     await this.execute(rows);
-    if (Math.floor((dayjs().unix() / 60) % 3)) return;
+    if (Math.floor(dayjs().unix() / 60 % 3)) return;
     const renders = [
       'https://jsx.jp',
       'https://sshwifty.jsx.jp',
