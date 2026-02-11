@@ -1,25 +1,31 @@
 export const list = [{
-  schedule: '2026-01-01 18:00+0900',
+  schedule: '2026-02-13 12:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }, {
-  schedule: '2026-01-02 18:00+0900',
+  schedule: '2026-02-13 13:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }, {
-  schedule: '2026-01-03 18:00+0900',
+  schedule: '2026-02-13 17:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }, {
-  schedule: '2026-01-04 18:00+0900',
+  schedule: '2026-02-14 17:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }, {
-  schedule: '2026-01-05 18:00+0900',
+  schedule: '2026-02-15 17:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }, {
-  schedule: '2026-01-06 18:00+0900',
+  schedule: '2026-02-16 17:00+0900',
   title: 'WiMAX remove',
   text: 'WiMAX remove\nWiMAX remove 🍺 WiMAX remove',
+  link: 'https://www.ka-shimo.com/mypage/contract',
 }];

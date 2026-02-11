@@ -6,7 +6,7 @@ export class Remind {
   filter(list) {
     return list.filter(item => isNow(dayjs(item.schedule)))
     .map(item => {
-      if (item.url) item.text += `\n<${item.url}|${item.text}>`;
+      if (item.link) item.text = `\n<${item.link}|${item.text}>`;
       return item;
     });
   }

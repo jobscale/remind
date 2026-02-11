@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import { logger } from '@jobscale/logger';
 import { remind } from './app/index.js';
 import { list } from './app/list.js';
@@ -39,33 +38,15 @@ class App {
     });
   }
 
-  async execute(rowsList) {
-    const rows = rowsList.flat();
+  async start() {
+    const rows = remind.filter(list);
     if (!rows.length) return;
-    const opts = {};
+    const store = {};
     for (const row of rows) {
-      if (!opts.first) opts.first = true;
+      if (!store.first) store.first = true;
       else await new Promise(resolve => { setTimeout(resolve, 10000); });
       await this.post(row);
     }
-  }
-
-  async start() {
-    const rows = remind.filter(list);
-    await this.execute(rows);
-    if (Math.floor(dayjs().unix() / 60 % 3)) return;
-    const renders = [
-      'https://jsx.jp',
-      'https://sshwifty.jsx.jp',
-      'https://wiki.jsx.jp/doku.php',
-      'https://zipcode.jsx.jp',
-      'https://todo.jsx.jp',
-      'https://mqtt.jsx.jp',
-    ];
-    await Promise.all(renders.map(
-      url => fetch(url).then(res => logger.info({ status: res.status, url }))
-      .catch(e => logger.error({ message: e.message, url })),
-    ));
   }
 }
 
