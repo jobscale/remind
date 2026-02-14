@@ -6,7 +6,6 @@ class App {
   postSlack(body) {
     const url = 'https://jsx.jp/api/slack';
     const options = {
-      url,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
