@@ -6,7 +6,10 @@ export class Remind {
   filter(list) {
     return list.filter(item => isNow(dayjs(item.schedule)))
     .map(item => {
-      if (item.link) item.text = `\n<${item.link}|${item.text}>`;
+      if (item.link) {
+        item.text = item.text
+        .split('\n').filter(v => v.trim()).map(v => `<${item.link}|${v}>`);
+      }
       return item;
     });
   }
