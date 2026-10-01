@@ -1,7 +1,7 @@
 {
-  "name": "remind",
   "private": true,
-  "version": "0.1.5",
+  "name": "remind",
+  "version": "0.1.6",
   "description": "remind",
   "keywords": [
     "news"
@@ -14,17 +14,18 @@
     "start": "node index.js",
     "pretest": "date -Iseconds",
     "lint": "eslint",
-    "test": "npm run lint"
+    "posttest": "npm run lint",
+    "test": "date -Iseconds"
   },
   "pre-commit": "test",
   "dependencies": {
-    "@jobscale/logger": "^0.10.5",
-    "dayjs": "^1.11.19"
+    "@jobscale/create-logger": "^1.0.5",
+    "dayjs": "^1.11.23"
   },
   "devDependencies": {
-    "@jobscale/eslint-plugin-standard": "^0.0.12",
-    "eslint": "^10.0.0",
-    "eslint-plugin-jest": "^29.13.0",
-    "pre-commit": "^1.2.2"
+    "@jobscale/eslint-plugin-standard": "^0.1.4",
+    "eslint": "^10.11.0",
+    "eslint-plugin-jest": "^29.16.6",
+    "pre-commit": "^2.0.0"
   }
 }
